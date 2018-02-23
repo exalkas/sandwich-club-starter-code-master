@@ -42,22 +42,21 @@ public class JsonUtils {
             }
 
             //Get place of origin
-            String placeOfOrigin=item.getString("placeOfOrigin");
+            String placeOfOrigin=name.getString("placeOfOrigin");
             Log.d(LOG_TAG,"PlaceofOrigin= "+placeOfOrigin);
 
             //Get description
-            String description="";
-            if (item.has("description")) {description=item.getString("description");}
+            String description=name.getString("description");
             Log.d(LOG_TAG,"Desription= "+description);
 
 
             //Get image
-            String image="" ; //item.getString("image");
+            String image=name.getString("image");
 
             //Get array Ingredients
             List<String> ingredients=new ArrayList<>();
 
-            JSONArray arrIngredients=item.getJSONArray("ingredients");
+            JSONArray arrIngredients=name.getJSONArray("ingredients");
 
             for(int i=0;i<arrIngredients.length();i++)
                 {

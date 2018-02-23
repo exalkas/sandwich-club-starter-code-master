@@ -58,7 +58,7 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         placeOfOrigin_Tv=findViewById(R.id.origin_tv);
-        alsoKnown_Tv=findViewById(R.id.origin_tv);
+        alsoKnown_Tv=findViewById(R.id.also_known_tv);
         description_Tv=findViewById(R.id.description_tv);
         ingredients_Tv=findViewById(R.id.ingredients_tv);
 
@@ -87,13 +87,14 @@ public class DetailActivity extends AppCompatActivity {
     private void populateUI(String origin,List<String> alsoKnownAs, String description, List<String> ingredients) {
 
             for (int i = 0; i < alsoKnownAs.size(); i++) {
-                alsoKnown_Tv.append(alsoKnownAs.get(i));
-                Log.d(LOG_TAG,alsoKnownAs.get(i));
+                alsoKnown_Tv.append(alsoKnownAs.get(i)+"\n");
+                Log.d(LOG_TAG,"Alsoknownas= "+alsoKnownAs.get(i));
             }
 
 
         placeOfOrigin_Tv.setText(origin);
         description_Tv.setText(description);
+
         for (int i=0;i<ingredients.size();i++){
             ingredients_Tv.append(ingredients.get(i)+"\n");
         }
